@@ -1,0 +1,273 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  
+}
+
+body {
+  background: #FF993F;
+  /*background: linear-gradient(to bottom, #a7cfdf 0%, #23538a 100%);*/
+  background: linear-gradient(to bottom, #FFAF6D 0%, #FF993F 100%);
+  /*padding: 25px;*/
+}
+
+.flex--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ta--center {
+  text-align: center;
+}
+
+.w--100 {
+  width: 100%;
+}
+
+.shield {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.elem--focus {
+    outline: 8px solid cornsilk;
+}
+
+.gameBoard .cardHolder>div,
+.gameBoard .LBG {
+  background: #cedbe9;
+  background: -moz-linear-gradient(top, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%);
+  background: -webkit-linear-gradient(top, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%);
+  background: linear-gradient(to bottom, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b', GradientType=0);
+}
+
+.gameBoard .cardHolder>div:empty,
+.gameBoard .score,
+.gameBoard .button,
+.gameBoard .DBG {
+  background: #7db9e8;
+  background: -moz-linear-gradient(top, #7db9e8 0%, #207cca 49%, #2989d8 50%, #1e5799 100%);
+  background: -webkit-linear-gradient(top, #7db9e8 0%, #207cca 49%, #2989d8 50%, #1e5799 100%);
+  background: linear-gradient(to bottom, #7db9e8 0%, #207cca 49%, #2989d8 50%, #1e5799 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799', GradientType=0);
+}
+
+.gameBoard {
+  position: relative;
+  font-family: helvetica, sans-serif;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  border: 5px solid #003c7b;
+  text-align: center;
+  padding: 140px 260px;
+  border-radius: 50%;
+  /*max-width: 1500px;*/
+  max-height: 800px;
+  min-width: 305px;
+  margin: auto;
+  background: url('../svg/game-bg.svg') #3a84c3; /*Dark blue: #0C4779, Light blue: #3a84c3 */
+  /*https://s3-us-west-2.amazonaws.com/s.cdpn.io/40041/bgFF.svg*/
+  background-repeat: repeat;
+  background-position: center center;
+  box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+
+.gameBoard .score {
+  position: absolute;
+  text-align: center;
+  margin: auto;
+  font-size: 75px;
+  height: 75px;
+  line-height: 75px;
+  width: 125px;
+  /*padding: 20px;*/
+  border: 2px solid white;
+  box-shadow: inset 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+.gameBoard .score#boardScore {
+  height: 85px;
+  line-height: 85px;
+  width: 150px;
+  font-size: 85px;
+  left: 0;
+  right: 0;
+  top: 20px;
+}
+.gameBoard .score#team1 {
+  left: 10px;
+  top: 0;
+  bottom: 0;
+}
+.gameBoard .score#team2 {
+  right: 10px;
+  top: 0;
+  bottom: 0;
+}
+
+.gameBoard .questionHolder {
+  width: 100%;
+  margin: auto;
+  /*height: 100px;*/
+  line-height: 100px;
+  text-align: center;
+  font-size: 40px;
+  color: #003c7b;
+  text-shadow: initial;
+  text-align: center;
+  border: 1px solid black;
+  background: #deeeff;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  box-shadow: inset 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+.gameBoard .questionHolder span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.gameBoard .colHolder {
+  background: black;
+  /*padding: 4px;*/
+}
+.gameBoard .colHolder>div {
+  display: block;
+  width:100%;
+  box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+.gameBoard .cardHolder {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  height: 85px;
+  /*margin: 4px;*/
+  width: 100%;
+  background: black;
+  border: 2px solid white;
+}
+.gameBoard .cardHolder:not(.empty){
+  cursor: pointer;
+}
+.gameBoard .cardHolder b {
+  /*position: absolute;*/
+  /*right: 0;*/
+  line-height: 78px;
+  width: 50px;
+  text-align: center;
+  border-left: 2px solid #003c7b;
+}
+.gameBoard .cardHolder span {
+  margin: 10px;
+}
+.gameBoard .cardHolder>div {
+  /*top: -2px;*/
+  /*left: -2px;*/
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 100%;
+  line-height: 100%;
+  height: 100%;
+  border: 2px solid #003c7b;
+  line-height: 50px;
+}
+.gameBoard .cardHolder .back {
+  font-size: 40px;
+  text-align: left;
+  height: 78px;
+  /*line-height: 50px;*/
+  display: flex;
+  align-items: center;
+}
+.gameBoard .cardHolder .back span {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  flex: 1;
+}
+.gameBoard .cardHolder .front {
+  text-align: center;
+}
+.gameBoard .cardHolder .front span {
+  font-size: 40px;
+  position: absolute;
+  border-radius: 50%;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+  border: 2px solid #003c7b;
+}
+
+.gameBoard .btnHolder {
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.gameBoard .btnHolder .button {
+  cursor: pointer;
+  display:inline-block;
+  font-size: 20px;
+  margin:10px;
+  height:50px;
+  line-height:50px;
+  width:175px;
+  border:3px solid white;
+  -webkit-box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+  box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+.gameBoard .btnHolder .button#awardTeam1 {
+  border-radius: 50px 0 0 50px;
+  position: absolute;
+  left: 0;
+}
+.gameBoard .btnHolder .button#awardTeam2 {
+  border-radius: 0 50px 50px 0;
+  position: absolute;
+  right: 0;
+}
+
+.gameBoard .btnHolder .miss {
+	background-color: red;
+
+  visibility: hidden;
+  display:inline-block;
+  font-size: 20px;
+  height:50px;
+  line-height:50px;
+  margin: 0 6px;
+  width:50px;
+  border:3px solid white;
+  -webkit-box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+  box-shadow: 0 1px 24px 1px rgba(0, 0, 0, 0.48);
+}
+
+@media screen and (min-width: 780px) {
+  .gameBoard .colHolder>div{
+    display: inline-block;
+    width:50%;
+  }
+}

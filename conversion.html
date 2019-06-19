@@ -1,0 +1,38 @@
+<head>
+  <title>Conversion - Family Feud</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+    
+    
+    
+  </style>
+  
+</head>
+
+<body>
+
+  <div id="app" class="container">
+    
+    <textarea rows="5" v-model="inputText"></textarea>
+    <br>
+    <button type="button" v-on:click="onBtnConvertClicked">Convert</button>
+    
+    <div v-html="convertedText">
+      
+    </div>
+    
+  </div>
+  
+  <!--<script src="js/vue/2.5.21/vue.min.js"></script>-->
+  <script type="module">
+    
+    import { init } from "./js/conversionPage.js";
+    
+    var page = init();
+    
+  </script>
+  
+</body>

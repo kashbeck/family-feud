@@ -1,5 +1,8 @@
 # familyfeud
 
+> node app.js
+> http://localhost:3000/admin.html
+
 Questions are fetch from "../js/FF3.json" file.
 
 Open panel.html
